@@ -2,6 +2,21 @@
   <div class-"row">
     <div class="col-lg-12">
       <!--プロフィール画像、名前と紹介文-->
+      <div class="table">
+        <table class="borderless">
+          <tbody>
+            <tr>
+              <th><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg" %></th>
+            </tr>
+            <tr>
+              <th><%= @user.name %></th>
+            </tr>
+            <tr>
+              <th><%= @user.introduction %></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -10,8 +25,7 @@
     <div class="col-lg-12">
       <!--自身の投稿一覧-->
       <= tasks.each do |task| %>
-      <div class="col-lg-8">
-
+      <div class="col-lg-8 mx-auto">
       </div>
       < end %>
     </div>
