@@ -22,7 +22,7 @@
 
           <% if user_signed_in? %>
             <li class="nav-item ">
-              <%=  %>
+              <%= link_to 'Mypage', user_path(current_user.id), class: 'nav-link text-ligth' %>
             </li>
             <li class="nav-item">
               <%=  %>
@@ -31,7 +31,7 @@
               <%=  %>
             </li>
             <li class="nav-item">
-              <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-ligth' %>
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-ligth' %>
             </li>
 
           <% else %>
