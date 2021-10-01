@@ -6,6 +6,7 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @user = @task.user
+    @comment = Comment.new
   end
 
   def new
