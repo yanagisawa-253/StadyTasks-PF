@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
 
   has_many :tasks, dependent: :destroy
-  # attachment :profile_image
+  attachment :profile_image_id
 end

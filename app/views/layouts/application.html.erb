@@ -25,10 +25,7 @@
               <%= link_to 'Mypage', user_path(current_user.id), class: 'nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%=  %>
-            </li>
-            <li class="nav-item">
-              <%=  %>
+              <%= link_to 'Task', tasks_path, class: 'nav-link text-ligth' %>
             </li>
             <li class="nav-item">
               <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-ligth' %>
@@ -40,7 +37,7 @@
               <%= link_to "About", '/about', class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <%=  %>
+              <%= link_to 'Task', tasks_path, class: 'nav-link text-ligth' %>
             </li>
             <li class="nav-item">
               <%= link_to "sign up", new_user_registration_path, class: 'nav-link text-ligth' %>
