@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   def like_by?(user)
     likes.where(user_id: user.id).exists?
   end
-  
+
   def create_notification_like!(current_user)
     # すでに「いいね」されているか検索
     temp = Notification.where(["visitor_id = ? and visited_id = ? and task_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
@@ -25,7 +25,7 @@ class Task < ApplicationRecord
       notification.save if notification.valid?
     end
   end
-  
+
   def create_notification_comment!(current_user, comment_id)
     # 自分以外にコメントしている人をすべて取得し全員に通知を送る
     temp_ids = Comment.select(:user_id).where(task_id: id).where.not(user_id: current_user.id).distinct

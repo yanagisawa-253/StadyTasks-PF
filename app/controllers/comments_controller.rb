@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     comment = current_user.comments.new(comment_params)
     comment.task_id = task.id
     comment.save
-    task.create_notification_comment!(current_user, @comment.id)
+
     redirect_to task_path(task)
   end
 
