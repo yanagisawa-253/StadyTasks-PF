@@ -35,7 +35,13 @@
         <% if @task.user == current_user %>
           <%= link_to "コメント #{@task.comments.count}", task_path(@task.id), class: "btn btn-outline-primary btn-sm mb-2 ml-3" %>
           <%= link_to "削除", task_path(@task), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-danger btn-sm mb-2 ml-3" %>
-          <%= link_to "編集", edit_task_path(@task), class: "btn btn-outline-primary btn-sm mb-2" %>
+          <%= link_to "編集", edit_task_path(@task), class: "btn btn-outline-primary btn-sm mb-2 ml-4" %>
+
+          <% if current_user.liked_by?(@task.id) %>
+            <%= link_to '❤︎', destroy_like_path(@task), method: :delete %>
+          <% else %>
+            <%= link_to '♡', create_like_path(@task), method: :post, class: "text-danger"%>
+          <% end %>
         <% end %>
       </div>
         <!--隠せるように-->

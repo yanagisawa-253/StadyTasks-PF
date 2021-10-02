@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :create]
+
   def index
     @tasks = Task.all
   end
@@ -7,6 +9,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @user = @task.user
     @comment = Comment.new
+    @like = Like.new
   end
 
   def new
