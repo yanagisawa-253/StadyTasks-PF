@@ -7,5 +7,6 @@ class User < ApplicationRecord
 
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destr
   attachment :profile_image_id
 end
