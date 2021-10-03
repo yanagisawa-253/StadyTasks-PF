@@ -2,11 +2,13 @@ class CommentsController < ApplicationController
 
   def create
     task = Task.find(params[:task_id])
-    comment = current_user.comments.new(comment_params)
+    comment = current_user.task_comments.new(comment_params)
     comment.task_id = task.id
     comment.save
-
-    redirect_to task_path(task)
+    @task = Task.find(params[:task_id])
+    @comment = Comment.new
+    # 通知機能実装の為のレコード
+    @task.create_notification_by(current_user)
   end
 
   def destroy
@@ -16,6 +18,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:comment, :task_id, :user_id)
   end
 end
