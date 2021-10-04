@@ -1,0 +1,8 @@
+  <div class="row">
+    <div class="col-sm-10">
+      <%= form_with(model: [task, comment])  do |f| %>
+        <%= f.text_field :comment, :size => "70", class: "input-mysize" %>
+        <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
+      <% end %>
+    </div>
+  </div>

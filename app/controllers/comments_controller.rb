@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
 
   def create
-    task = Task.find(params[:task_id])
-    comment = current_user.task_comments.new(comment_params)
-    comment.task_id = task.id
-    comment.save
     @task = Task.find(params[:task_id])
-    @comment = Comment.new
-    # 通知機能実装の為のレコード
+    #投稿に紐づいたコメントを作成
+    @comment = @task.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    @comment.save
+    
+    # 通知機能実装の為のレコード作成
     @task.create_notification_by(current_user)
+    render 'index'
   end
 
   def destroy

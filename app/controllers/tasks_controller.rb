@@ -10,6 +10,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @user = @task.user
     @comment = Comment.new
+    @comments = @task.comments
     @like = Like.new
   end
 

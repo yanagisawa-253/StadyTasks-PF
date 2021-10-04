@@ -24,6 +24,9 @@
             <li class="nav-item ">
               <%= link_to 'Mypage', user_path(current_user.id), class: 'nav-link text-ligth' %>
             </li>
+            <% if unchecked_notifications.any? %>
+                <i class="fa fa-circle notification-circle"></i>
+            <% end %>
             <li class="nav-item">
               <%= link_to 'Notice', notifications_path, class: 'nav-link text-ligth' %>
             </li>

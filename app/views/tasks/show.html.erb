@@ -1,26 +1,5 @@
 <div class="container">
   <div class="row">
-    <!--saidoba-nisiyou-->
-    <div class="col-md-3 border rounded mt-5 ml-3">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg" %></th>
-          </tr>
-          <tr>
-            <th><%= @user.name %></th>
-          </tr>
-          <tr>
-            <th><%= @user.introduction %></th>
-          </tr>
-        </tbody>
-      </table>
-      <div class="row">
-      <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-primary mx-auto mb-3" %>
-      </div>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-sm-8 border border-secondary rounded mx-auto mt-5">
       <div class="container">
         <div class="col-sm-5 mt-3">
@@ -44,24 +23,23 @@
           <% end %>
         <% end %>
       </div>
-        <!--隠せるように-->
-      <%= form_with(model:[@task, @comment], local: true) do |f| %>
-        <%= f.text_field :comment, placeholder: "コメントを入力", :size => "70" %>
-        <%= f.submit "送信する", class: "btn btn-outline-success ml-2 mb-2" %>
-      <% end %>
     </div>
-    <div class="col-sm-8 border border-secondary rounded mx-auto mt-1">
-      <% @task.comments.each do |comment| %>
-      <div class="col-sm-3">
-        <%= comment.user.name %>
-      </div>
-      <div class="col-sm-5 ">
-        <%= comment.comment %>  <%= comment.created_at.strftime('%Y/%m/%d') %>
 
-      <% if comment.user == current_user %>
-          <%= link_to "削除", task_comment_path(comment.task, comment), method: :delete, class: "btn btn-outline-danger btn-sm mb-2 ml-5 " %>
-      </div>
-      <% end %>
+    <div class="col-sm-10 border-bottom mx-auto">
+      <ul class="list-unstyled border-top pt-3 mt-5 pl-5">
+        <li id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 mx-auto">
+      <% if user_signed_in? %>
+        <div class="comment-create pl-5">
+          <h4 class="pb-3 mt-3">コメントを投稿する</h4>
+          <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
+        </div>
       <% end %>
     </div>
   </div>
