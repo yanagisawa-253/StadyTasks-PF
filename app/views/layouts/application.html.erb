@@ -7,13 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/73a3b6086e.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand p-3" href="/"><strong>StudyTasks</strong></a>
+          <a class="navbar-brand p-3" href="/"><i class="fas fa-pencil-alt"></i><strong>StudyTasks</strong></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,34 +23,34 @@
 
           <% if user_signed_in? %>
             <li class="nav-item ">
-              <%= link_to 'Mypage', user_path(current_user.id), class: 'nav-link text-ligth' %>
+              <%= link_to 'Myページ', user_path(current_user.id), class: 'fas fa-home nav-link text-ligth' %>
             </li>
             <% if unchecked_notifications.any? %>
                 <i class="fa fa-circle notification-circle"></i>
             <% end %>
             <li class="nav-item">
-              <%= link_to 'Notice', notifications_path, class: 'nav-link text-ligth' %>
+              <%= link_to '通知', notifications_path, class: 'far fa-comment pl-2 nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Task', tasks_path, class: 'nav-link text-ligth' %>
+              <%= link_to 'タスク投稿', new_task_path, class: 'far fa-copy nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-ligth' %>
+              <%= link_to 'タスク管理', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "退出", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-ligth' %>
             </li>
 
           <% else %>
 
             <li class="nav-item">
-              <%= link_to "About", '/about', class: 'nav-link text-light' %>
+              <%= link_to 'タスクを覗いてみる', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Task', tasks_path, class: 'nav-link text-ligth' %>
+              <%= link_to "新規登録", new_user_registration_path, class: 'fas fa-user-plus nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to "sign up", new_user_registration_path, class: 'nav-link text-ligth' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "login", new_user_session_path, class: 'nav-link text-ligth' %>
+              <%= link_to "ログイン", new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-ligth' %>
             </li>
           <% end %>
             </ul>
