@@ -5,7 +5,7 @@
         <table class="table table-borderless">
           <tbody>
             <tr>
-              <th><%= attachment_image_tag @user, :profile_image, fallback: "icon_110950_256.png" %></th>
+              <th><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg" %></th>
             </tr>
             <tr>
               <th><%= @user.name %></th>
@@ -20,19 +20,27 @@
         </table>
       </div>
     </div>
-    <div class="col-sm-7 border rounded mx-auto mt-5">
+    <div class="col-md-8 mt-5 ml-5">
       <% @tasks.each do |task| %>
-      <div class="container">
+      <div class="container border rounded">
         <div class="col-sm-5 mt-3">
           <strong><%= task.title %></strong>（<%= task.user.name %>）
         </div>
-        <div class="col-sm-10 mt-3">
+        <div class="col-sm-8 mt-3">
           ・<%= task.body %>
         </div>
-        <!--セレクトボックスで完了、未完了-->
-      </div>
-      <div class="d-flex flex-row-reverse">
-      <%= link_to "編集", edit_task_path(task), class: "btn btn-outline-primary btn-sm mb-2" %>
+        <div class="col-sm-3 mt-3 text-success">
+          <%= task.status %>
+          <i class="fas fa-wrench"></i>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <%= link_to "", task_path(task), class: "fas fa-clipboard-check btn btn-sm text-primary mb-2 ml-3" %>
+          <% if current_user %>
+            <%= link_to "", edit_task_path(task), class: "fas fa-edit btn btn-sm text-primary mb-2 ml-3" %>
+          <% end %>
+          <p class="mb-2 ml-2"></p>コメント <%= task.comments.count %></p>
+          <p class="mb-2 ml-2 mr-3"> ♡ <%= task.likes.count %></p>
+        </div>
       </div>
       <% end %>
     </div>

@@ -17,7 +17,7 @@
         <div class="row pb-2">
           <%= f.label "タスクを設定してください:" %>
         </div>
-        <%= f.text_field :title, placeholder: "20文字以内で入力してください", :size => "50" %>
+        <%= f.text_field :title, placeholder: "20文字以内で入力してください", :size => "30" %>
         <!--bootstrap公式よりヘルプテキストの表示-->
         <small id="passwordHelpBlock" class="form-text text-muted pt-1">タスク設定は２０文字以内で入力してください</small>
       </div>
@@ -25,9 +25,13 @@
         <div class="row pb-2">
           <%= f.label "詳細を入力してください:" %>
         </div>
-        <%= f.text_field :body, placeholder: "50文字以内で入力してください", :size => "80" %>
+        <%= f.text_field :body, placeholder: "50文字以内で入力してください", :size => "45" %>
         <small id="passwordHelpBlock" class="form-text text-muted pt-1">詳細については５０文字以内で入力してください</small>
       </div>
+      <div class="field">
+        <%= f.label "ステータスを更新する" %>
+    　　<%= f.select :status, ["新規","着手中","完了"] %>
+  　　</div>
       <div class="form-group text-center">
         <%= f.submit "投稿する", class: "btn btn-success mt-3" %>
       </div>

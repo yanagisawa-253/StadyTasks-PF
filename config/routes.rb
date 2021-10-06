@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :create, :destroy]
     resource :likes, only: [:create, :destroy]
   end
+  # 一覧画面からでもステータス変更できるように
+  post '/tasks/:id/done' => 'tasks#done',   as: 'done'
 
   resources :notifications, only: [:index, :destroy] do
     collection do

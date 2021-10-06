@@ -23,28 +23,28 @@
 
           <% if user_signed_in? %>
             <li class="nav-item ">
-              <%= link_to 'Myページ', user_path(current_user.id), class: 'fas fa-home nav-link text-ligth' %>
+              <%= link_to 'MYページ', user_path(current_user.id), class: 'fas fa-home nav-link text-ligth' %>
             </li>
             <% if unchecked_notifications.any? %>
                 <i class="fa fa-circle notification-circle"></i>
             <% end %>
             <li class="nav-item">
-              <%= link_to '通知', notifications_path, class: 'far fa-comment pl-2 nav-link text-ligth' %>
+              <%= link_to '通知', notifications_path, class: 'far fa-bell pl-2 nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'タスク投稿', new_task_path, class: 'far fa-copy nav-link text-ligth' %>
+              <%= link_to '投稿', new_task_path, class: 'far fa-copy nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to 'タスク管理', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
+              <%= link_to '一覧', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to "退出", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-ligth' %>
+              <%= link_to "", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-ligth' %>
             </li>
 
           <% else %>
 
             <li class="nav-item">
-              <%= link_to 'タスクを覗いてみる', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
+              <%= link_to '覗いてみる', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
             </li>
             <li class="nav-item">
               <%= link_to "新規登録", new_user_registration_path, class: 'fas fa-user-plus nav-link text-ligth' %>
