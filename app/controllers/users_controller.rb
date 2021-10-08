@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     flash[:notice] = "プロフィールを更新しました"
-    redirect_to tasks_path
+    redirect_to user_path(@user)
   end
 
   private

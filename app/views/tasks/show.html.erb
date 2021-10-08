@@ -4,7 +4,7 @@
       <i class="fas fa-circle fa-stack-2x text-dark"></i>
       <i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
     </span>
-    <div class="col-sm-8 border border-secondary rounded mt-5 ml-5 mr-2">
+    <div class="col-sm-8 border border-secondary rounded mt-5 ml-5 mr-4">
       <div class="container">
         <div class="col-sm-5 mt-3">
           <strong><%= @task.title %></strong> [ <%= @task.user.name %> ]
@@ -18,7 +18,7 @@
         <% if @task.user == current_user %>
           <%= link_to " #{@task.comments.count}", task_path(@task.id), class: "far fa-comments btn btn-sm  mb-3 ml-3" %>
           <%= link_to "", task_path(@task), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash-alt btn btn-sm text-secondary mb-3 ml-3" %>
-          <%= link_to "", edit_task_path(@task), class: "fas fa-edit btn btn-sm text-primary mb-3 ml-4" %>
+          <%= link_to "", edit_task_path(@task), class: "fas fa-wrench btn btn-sm text-primary mb-3 ml-4" %>
           <% if current_user.liked_by?(@task.id) %>
             <%= link_to '︎', destroy_like_path(@task), method: :delet, class: " fas fa-heartt text-danger btn-sm  mb-3 ml-3" %>
           <% else %>
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-    <div class="col-sm-10 mx-auto mr-2">
+    <div class="col-sm-10 mx-auto">
         <div class="comment-create pl-5 ml-5">
           <h4 class="pb-3 mt-3">コメントを投稿する</h4>
           <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>

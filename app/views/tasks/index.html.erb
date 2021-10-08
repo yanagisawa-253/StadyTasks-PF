@@ -22,7 +22,7 @@
         <div class="d-flex flex-row-reverse">
           <%= link_to "", task_path(task), class: "fas fa-clipboard-check btn btn-sm text-primary mb-2 ml-3" %>
           <% if current_user %>
-            <%= link_to "", edit_task_path(task), class: "fas fa-edit btn btn-sm text-primary mb-2 ml-3" %>
+            <%= link_to "", edit_task_path(task), class: "fas fa-wrench btn btn-sm text-primary mb-2 ml-3" %>
           <% end %>
           <p class="mb-2 ml-2"></p>コメント <%= task.comments.count %></p>
           <p class="mb-2 ml-2 mr-3"> ♡ <%= task.likes.count %></p>

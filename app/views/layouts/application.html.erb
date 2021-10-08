@@ -29,10 +29,10 @@
                 <i class="fa fa-circle notification-circle"></i>
             <% end %>
             <li class="nav-item">
-              <%= link_to '通知', notifications_path, class: 'far fa-bell pl-2 nav-link text-ligth' %>
+              <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
             </li>
             <li class="nav-item">
-              <%= link_to '投稿', new_task_path, class: 'far fa-copy nav-link text-ligth' %>
+              <%= link_to '投稿', new_task_path, class: 'far fa-edit nav-link text-ligth' %>
             </li>
             <li class="nav-item">
               <%= link_to '一覧', tasks_path, class: 'fas fa-clipboard-list nav-link text-ligth' %>
@@ -65,6 +65,13 @@
           <div class="mx-auto">
             <p></p>
           </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bg-dark mt-5 pt-3 pb-4">
+      <div class="container">
+        <div class="col-md-8 mx-auto">
+          <p><%= link_to "StudyTasks", root_path, class: "text-white-50" %></p>
         </div>
       </div>
     </footer>
