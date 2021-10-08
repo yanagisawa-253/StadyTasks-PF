@@ -1,15 +1,12 @@
 class CommentsController < ApplicationController
 
   def create
-    @task = Task.find(params[:task_id])
-    #投稿に紐づいたコメントを作成
-    @comment = @task.comments.build(comment_params)
-    @comment.user_id = current_user.id
-    @comment.save
-    
-    # 通知機能実装の為のレコード作成
-    @task.create_notification_by(current_user)
-    render 'index'
+    task = Task.find(params[:task_id])
+    comment = current_user.comments.new(comment_params)
+    comment.task_id = task.id
+    comment.save
+    task.create_notification_by(current_user)
+    redirect_to task_path(task)
   end
 
   def destroy
@@ -22,3 +19,16 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:comment, :task_id, :user_id)
   end
 end
+
+  # def create
+  #   #通知作成
+  #   @postimage = @comment.post_image
+  #   @postimage.create_notification_post_image_comment!(current_user, @comment.id)
+  #   end
+
+  # def destroy
+  #   @postimagecomment = PostImageComment.find(params[:post_image_id])
+  #   @postimagecomment.post_image.id = @postimagecomment.post_image_id
+  #   @postimage = @postimagecomment.post_image
+  #   @postimagecomment.destroy
+  #   end

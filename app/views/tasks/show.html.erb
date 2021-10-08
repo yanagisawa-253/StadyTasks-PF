@@ -19,12 +19,12 @@
           <%= link_to " #{@task.comments.count}", task_path(@task.id), class: "far fa-comments btn btn-sm  mb-3 ml-3" %>
           <%= link_to "", task_path(@task), method: :delete, data: { confirm: 'Are you sure?'}, class: "fas fa-trash-alt btn btn-sm text-secondary mb-3 ml-3" %>
           <%= link_to "", edit_task_path(@task), class: "fas fa-wrench btn btn-sm text-primary mb-3 ml-4" %>
+          <% end %>
           <% if current_user.liked_by?(@task.id) %>
             <%= link_to '︎', destroy_like_path(@task), method: :delet, class: " fas fa-heartt text-danger btn-sm  mb-3 ml-3" %>
           <% else %>
             <%= link_to '', create_like_path(@task), method: :post, class: "far fa-heart text-danger btn-sm  mb-3 ml-3" %>
           <% end %>
-        <% end %>
       </div>
     </div>
 
