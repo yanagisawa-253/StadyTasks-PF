@@ -2,7 +2,9 @@
     <div class="col-sm-10">
       <%= form_with(model: [task, comment])  do |f| %>
         <%= f.text_field :comment, :size => "70", class: "input-mysize", placeholder: "コメントを入力してください" %>
-        <%= f.submit "送信", class: "btn btn-secondary comment-submit float-right" %>
+        <div class="mx-auto col-sm-4">
+        <%= f.submit "送信", class: "btn btn-secondary comment-submit float-right　mx-auto mt-3 btn-block" %>
+        </div>
       <% end %>
     </div>
   </div>
