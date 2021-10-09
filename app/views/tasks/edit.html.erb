@@ -5,16 +5,16 @@
       <i class="fas fa-edit fa-stack-1x fa-inverse"></i>
     </span>
     <div class="col-sm-10 border rounded mx-auto mt-5 mb-5">
-        <% if @task.errors.any? %>
-          <div id="error_explanation mt-3 mx-auto">
-            <h2><%= @task.errors.count %>件の空欄があります。</h2>
-            <ul>
-              <% @task.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+      <% if @task.errors.any? %>
+        <div id="error_explanation mt-3 mx-auto">
+          <h4><%= @task.errors.count %>件の空欄があります。</h4>
+          <ul>
+            <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%= form_with model:@task, local:true do |f| %>
       <div class="form-group pt-3 pl-3 pb-3">
         <div class="row pb-2">

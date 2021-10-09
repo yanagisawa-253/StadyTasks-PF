@@ -52,6 +52,6 @@ class Task < ApplicationRecord
     notification.save if notification.valid?
   end
 
-  validates :title, {presence: true, length: { maximum: 20 }}
-  validates :body, {presence: true, length: { maximum: 50 }}
+  validates :title, :presence => {:message => 'タイトルを入力してください'}
+  validates :body, :presence => {:message => '本文を入力してください'}
 end

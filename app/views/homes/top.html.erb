@@ -76,31 +76,8 @@
         <div class="container border-top border-secondary mt-5">
           <div class="text-center mb-5">
             <h2 class="section-heading text-uppercase mt-5">お問合せ</h2>
-            <h5 class="section-subheading text-muted">何かありましたらお気軽にお問い合わせください</h5>
+            <h5 class="section-subheading text-muted">何かありましたら下記よりお気軽にお問い合わせください</h5>
+            <%= link_to "お問合せページ", inquiry_path, class: "btn btn-primary mt-5" %>
           </div>
-
-        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="お名前を入力してください *" data-sb-validations="required" />
-                                <!---->
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Eメールを入力してください *" data-sb-validations="required,email" />
-                                <!---->
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="message" placeholder="お問合せ内容を入力してください *" data-sb-validations="required"></textarea>
-                                <!---->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                      <button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">送信する</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+        </div>
+      </section>

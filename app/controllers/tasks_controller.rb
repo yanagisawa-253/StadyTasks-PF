@@ -25,9 +25,12 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.user_id = current_user.id
-    @task.save
-    flash[:notice] = 'タスクが投稿されました'
-    redirect_to tasks_path
+    if @task.save
+      flash[:notice] = 'タスクが投稿されました'
+      redirect_to tasks_path
+    else
+      render 'new'
+    end
   end
 
   def update
