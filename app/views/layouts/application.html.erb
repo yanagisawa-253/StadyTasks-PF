@@ -58,15 +58,20 @@
         </div>
       </nav>
     </header>
+    
+    <p class="notice text-success ml-3 mt-3">
+      <% if flash[:notice] %>
+      <%= notice %>
+      <% end %>
+    </p>
     <%= yield %>
 
-    <footer class="footer has-background-primary fixed-bottom">
-    <!-- コピーライト -->
-    <p class="footer-text has-text-white has-text-centered">© 2021 </p>
-    <!-- GitHubリンク -->
-    <div class="has-icons-left has-text-centered">
-      <%= link_to 'GitHub', 'https://github.com/yanagisawa-253/StadyTasks-PF', class: 'fab fa-github' %>
-    </div>
+    <footer class="footer">
+      <p class="footer-text has-text-white has-text-centered">© 2021 </p>
+      <!-- GitHubリンク -->
+      <div class="has-icons-left has-text-centered">
+        <%= link_to 'GitHub', 'https://github.com/yanagisawa-253/StadyTasks-PF', class: 'fab fa-github' %>
+      </div>
   </footer>
   </body>
 </html>

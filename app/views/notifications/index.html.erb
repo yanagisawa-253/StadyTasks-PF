@@ -4,15 +4,12 @@
       <h3 class="text-center mt-3">通知</h3>
       <%= link_to "　通知を全て削除する", notification_path(current_user.id), method: :delete, data:{confirm: "本当に消しますか？"}, class: "fas fa-trash" %>
       <hr>
-
       <% if @notifications.exists? %>
-        <div class="users-index">
-          <%= render @notifications %>
-          <= paginate @notifications %>
-        </div>
+        <%= render @notifications %>
       <% else %>
-        <p class="text-center mt-5"><strong>通知はありません</strong></p>
+        <p>通知はありません</p>
       <% end %>
+      <%= paginate @notifications, class: "paginate" %>
     </div>
   </div>
 </div>
