@@ -41,7 +41,9 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    redirect_to task_path(@task)
+    @task.destroy
+    flash[:success] = "投稿を削除しました"
+    redirect_to tasks_path
   end
 
   private
