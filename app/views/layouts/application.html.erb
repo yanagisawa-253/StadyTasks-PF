@@ -59,21 +59,14 @@
       </nav>
     </header>
     <%= yield %>
-    <footer>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="mx-auto">
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <footer class="bg-dark mt-5 pt-3 pb-4">
-      <div class="container">
-        <div class="col-md-8 mx-auto">
-          <p><%= link_to "StudyTasks", root_path, class: "text-white-50" %></p>
-        </div>
-      </div>
-    </footer>
+
+    <footer class="footer has-background-primary">
+    <!-- コピーライト -->
+    <p class="footer-text has-text-white has-text-centered">© 2021 </p>
+    <!-- GitHubリンク -->
+    <div class="has-icons-left has-text-centered">
+      <%= link_to 'GitHub', 'https://github.com/yanagisawa-253/StadyTasks-PF', class: 'fab fa-github' %>
+    </div>
+  </footer>
   </body>
 </html>
