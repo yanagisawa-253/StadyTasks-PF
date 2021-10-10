@@ -1,21 +1,22 @@
 class CommentsController < ApplicationController
 
   def create
-    @task = Task.find(params[:task_id])
-    @comment = @task.comments.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment = current_user.comments.build(comment_params)
+    @comment.task_id = params[:task_id]
+    # @task = Task.find(params[:task_id])
+    # @comment = @task.comments.new(comment_params)
+    # @comment.user_id = current_user.id
     if @comment.save
-      flash.now[:success] = 'コメントしました。'
       @task = @comment.task
       @task.create_notification_comment!(current_user, @comment.id)
-      render 'show'
-      # redirect_to task_path(@task)
+      redirect_to task_path(@task)
     else
       flash.now[:danger] = 'コメントを入力してください。'
       render 'show'
       # redirect_to post_path(@post)
     end
   end
+
   # def create
   #   task = Task.find(params[:task_id])
   #   comment = current_user.comments.new(comment_params)
@@ -36,16 +37,3 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:comment, :task_id, :user_id)
   end
 end
-
-  # def create
-  #   #通知作成
-  #   @postimage = @comment.post_image
-  #   @postimage.create_notification_post_image_comment!(current_user, @comment.id)
-  #   end
-
-  # def destroy
-  #   @postimagecomment = PostImageComment.find(params[:post_image_id])
-  #   @postimagecomment.post_image.id = @postimagecomment.post_image_id
-  #   @postimage = @postimagecomment.post_image
-  #   @postimagecomment.destroy
-  #   end

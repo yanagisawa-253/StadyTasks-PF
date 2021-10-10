@@ -25,6 +25,21 @@ class Task < ApplicationRecord
       notification.save if notification.valid?
     end
   end
+  
+  # def create_notification_by(current_user)
+  #   notification = current_user.active_notifications.new(
+  #     task_id: id,
+  #     comment_id: comment_id,
+  #     visited_id: visited_id,
+  #     visited_id: user_id,
+  #     action: 'comment'
+  #   )
+  #   # 自分の投稿に対するコメントは通知済みとする
+  #   if notification.visitor_id == notification.visited_id
+  #     notification.checked = true
+  #   end
+  #   notification.save if notification.valid?
+  # end
 
 
   def create_notification_comment!(current_user, comment_id)
@@ -43,7 +58,7 @@ class Task < ApplicationRecord
       task_id: id,
       comment_id: comment_id,
       visited_id: visited_id,
-      action: 'Comment'
+      action: 'comment'
     )
     # 自分が自分の投稿にコメントした時は通知済の扱いをする
     if notification.visitor_id == notification.visited_id

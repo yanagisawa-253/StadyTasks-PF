@@ -5,6 +5,11 @@
       <i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
     </span>
     <div class="col-sm-8 border border-secondary rounded mt-5 ml-5 mr-4">
+      <p class="notice text-success ml-3 mt-3">
+        <% if flash[:notice] %>
+        <%= notice %>
+        <% end %>
+      </p>
       <% if @task.errors.any? %>
         <div id="error_explanation mt-3 mx-auto">
           <h2>コメントを入力してください</h2>
