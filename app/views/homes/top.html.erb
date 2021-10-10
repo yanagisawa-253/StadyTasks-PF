@@ -1,27 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-       <header class="masthead" style="height: 650px; background-position: top center; background-image: url('assets/img/about/home-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading text-center">
-                            <h1 class="mt-5 mb-3"> StudyTasks</h1>
-                            <span class="subheading"><strong>
-                                「勉強がしたいが一人では心細い...」<br>「誰かと共有しながらモチベーチョンを維持したい！」<br>
-                                方達が集まるための場所です<br>ぜひご立ち寄り下さい</strong></span><br>
-                            <= link_to "初めてみる", new_user_session_path, class: "btn btn-outline-waring" %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+      <header class="masthead pt-5 mb-5" style="height: 600px; background-size: cover; background-image: url('assets/img/about/home-bg.jpg')">
+        <div class="site-heading text-center pt-5">
+         <h1 class="mt-5 mb-3"> StudyTasks</h1>
+          <span class="subheading"><strong>
+            「勉強がしたいが一人では心細い...」<br>「誰かと共有しながらモチベーチョンを維持したい！」<br>
+            方達が集まるための場所です<br>ぜひご立ち寄り下さい</strong></span><br>
+          <%= link_to "初めてみる", new_user_registration_path, class: "btn btn-outline-secondary mt-4" %>
+        </div>
+      </header>
 　　　<!--idを指定し移動-->
-      <section class="page-section" id="services">
-        <div class="container pb-5 mb-5">
+      <section class="page-section mt-3 mb-5" id="services">
+        <div class="container pb-5 pb-5">
           <div class="text-center mb-5">
-            <h2 class="section-heading text-uppercasemb-3">StudyTasksへようこそ</h2>
-            <h4 class="section-subheading text-muted">このサイトで使える機能をご紹介致します。</h4>
+            <h1 class="section-heading text-uppercase">StudyTasksへようこそ</h1>
+            <h3 class="section-subheading text-muted">このサイトで使える機能をご紹介致します。</h3>
           </div>
           <div class="row text-center">
             <div class="col-md-4">
@@ -54,114 +45,40 @@
 
 
       <section class="page-section" id="about">
-        <div class="container">
-          <div class="text-center">
-            <h2 class="section-heading text-uppercase mb-2">About</h2>
-            <h3 class="section-subheading text-muted">当サイトについて</h3>
+        <div class="container pb-5 pb-5">
+          <div class="text-center mb-5">
+            <h1 class="section-heading text-uppercase">About</h1>
+            <p class="mt-5">
+              <strong>ここは「勉強がしたいが一人では心細い...」「誰かと共有しながらモチベーチョンを維持したい！」<br>
+              と思う方達が集まるための交流サイトです</strong></p>
           </div>
-          <ul class="timeline list-unstyled">
-            <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
-                  <div class="timeline-panel mt-3">
-                    <div class="timeline-heading">
-                        <h4>ユーザー登録</h4>
-                        <h6 class="subheading">新規登録 or サインイン</h6>
-                    </div>
-                    <div class="timeline-body"><p class="text-muted">当サイトは会員登録をしていただくことにより、さまざまな機能をお使いいただけます。<br>登録していただくとタスク管理、コメント機能、いいね機能を利用できますのでぜひ一度登録していただければ幸いです。</p></div>
-                </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel mt-3">
-                            <div class="timeline-heading">
-                                <h4>タスクの投稿</h4>
-                                <h6 class="subheading">タスクについての機能</h6>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">タスク投稿ボタンからタイトルと内容を記入し投稿してください。その際空欄があると投稿出来ないのでご注意下さい。<br>ナビバーのタスクボタンを押して頂くと投稿一覧ページに遷移しますので他のユーザーの投稿を閲覧できます。<br>いいね、コメントを確認したい場合はナビバーの通知ボタンを押すかタスク詳細からご確認ください。</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
-                        <div class="timeline-panel mt-3">
-                            <div class="timeline-heading">
-                                <h4 class="subheading">お問合せについて</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">当サイトをお使いになって改善点、気になったことがあれば是非お気軽に下記フォームからお送りください。</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                          <div class="timeline-body"><p class="text-muted">皆様が良き活動を行えるように以下のことを禁止いたします<br><br>相手に対しての心ないコメントはお控え下さい。<br></p></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!-- Team-->
-         <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="section-heading text-uppercase">お問合せ</h2>
-                    <h5 class="section-subheading text-muted">何かありましたらお気軽にお問い合わせください</h5>
-                </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">送信する</button></div>
-                </form>
-            </div>
-        </section>
-    </div>
-  </div>
-</div>
+          <div class="col-lg-12 mt-5">
+            <h3>ここでは何ができるの...?</h3>
+              <ul class="mt-3">
+                <li class="pb-3">一日の目標設定を行い、完了できたかステータスが更新できる</li>
+                <li class="pb-3">ログインユーザーのタスクの閲覧ができ、コメントやいいねを残すことができ交流ができる</li>
+                <li class="pb-3">受け取ったいいね、コメントは通知欄に表示されます</li>
+                <li>投稿する際文字制限はかけていないですが,できるだけタイトル２０文字以内、本文５０文字以内に収めましょう。<br>詳細をわかりやすく簡潔にまとめる練習にしてください。</li>
+              </ul>
+          </div>
+          <div class="col-lg-12 mt-5 mb-5">
+            <h4 class="pb-3">皆様が良き活動を行えるように</h4>
+            <p>
+              ＊心ないコメントや誹謗中傷はお控えください<br>
+              皆様が良き活動を行えるようにトップページにお問合せフォームを設置していますので気づいたこと、
+              改善してほしいことがありましたら<br>お気軽にお送りください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="page-section" id="contact">
+        <div class="container border-top border-secondary mt-5">
+          <div class="text-center mb-5">
+            <h2 class="section-heading text-uppercase mt-5">お問合せ</h2>
+            <h5 class="section-subheading text-muted">何かありましたら下記よりお気軽にお問い合わせください</h5>
+            <%= link_to "お問合せページ", inquiry_path, class: "btn btn-primary mt-5" %>
+          </div>
+        </div>
+      </section>
