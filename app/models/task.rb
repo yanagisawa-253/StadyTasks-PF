@@ -27,7 +27,7 @@ class Task < ApplicationRecord
   end
 
 
-  def create_notification_comment!(current_user, post_comment_id)
+  def create_notification_comment!(current_user, comment_id)
     # （ログイン中の会員と投稿者以外で）同じ投稿にコメントしているユーザーに通知を送る
     temp_ids = Comment.where(task_id: id).where.not('user_id=? or user_id=?', current_user.id, user_id).select(:user_id).distinct
     # 取得したユーザーへの通知を作成

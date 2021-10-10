@@ -1,13 +1,29 @@
 class CommentsController < ApplicationController
 
   def create
-    task = Task.find(params[:task_id])
-    comment = current_user.comments.new(comment_params)
-    comment.task_id = task.id
-    comment.save
-    task.create_notification_comment!(current_user, comment.id)
-    redirect_to task_path(task)
+    @task = Task.find(params[:task_id])
+    @comment = @task.comments.new(comment_params)
+    @comment.user_id = current_user.id
+    if @comment.save
+      flash.now[:success] = 'コメントしました。'
+      @task = @comment.task
+      @task.create_notification_comment!(current_user, @comment.id)
+      render 'show'
+      # redirect_to task_path(@task)
+    else
+      flash.now[:danger] = 'コメントを入力してください。'
+      render 'show'
+      # redirect_to post_path(@post)
+    end
   end
+  # def create
+  #   task = Task.find(params[:task_id])
+  #   comment = current_user.comments.new(comment_params)
+  #   comment.task_id = task.id
+  #   comment.save
+  #   task.create_notification_comment!(current_user, comment.id)
+  #   redirect_to task_path(task)
+  # end
 
   def destroy
     Comment.find_by(id: params[:id]).destroy

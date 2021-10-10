@@ -6,11 +6,11 @@
     </span>
     <div class="col-sm-8 border border-secondary rounded mt-5 ml-5 mr-4">
       <% if @task.errors.any? %>
-          <div id="error_explanation mt-3 mx-auto">
-            <h2>コメントを入力してください</h2>
-          </div>
-        <% end %>
-        
+        <div id="error_explanation mt-3 mx-auto">
+          <h2>コメントを入力してください</h2>
+        </div>
+      <% end %>
+
       <div class="container">
         <div class="col-sm-5 mt-3">
           <strong><%= @task.title %></strong> [ <%= @task.user.name %> ]
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-    <div class="col-sm-10 mx-auto">
+    <div class="col-sm-10 mx-auto mb-5">
         <div class="comment-create pl-5 ml-5">
           <h4 class="pb-3 mt-3">コメントを投稿する</h4>
           <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
