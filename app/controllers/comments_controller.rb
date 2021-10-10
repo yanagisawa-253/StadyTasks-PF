@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
   def destroy
     Comment.find_by(id: params[:id]).destroy
-    flash[:notice] = " 投稿を削除しました"
+    flash[:notice] = " コメントを削除しました"
     redirect_to task_path(params[:task_id])
   end
 

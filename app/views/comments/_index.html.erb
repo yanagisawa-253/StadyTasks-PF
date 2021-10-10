@@ -8,16 +8,16 @@
               <tr>
                 <td>
                   <%= attachment_image_tag comment.user, :profile_image, fallback: "5.jpg", class:"comment-image", size: "40x40" %>
-                   <%= link_to "#{comment.user.name}", user_path(comment.user.id) %>
-                   <%= comment.comment %>
-                   <% if comment.user == current_user %>
-                      <%= link_to task_comment_path(comment.task_id, comment.id), method: :delete, remote: true, class: " btn btn-danger" do %>
-                      <i class="fas fa-trash" style="color: black;"></i>
-                      <% end %>
-                   <% end %>
-                   <span class="comment-date pull-right">
-                   <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-                    </span>
+                  <%= link_to "#{comment.user.name}", user_path(comment.user.id) %>
+                  <%= comment.comment %>
+                  <% if comment.user == current_user %>
+                    <%= link_to task_comment_path(comment.task_id, comment.id), method: :delete, remote: true, class: " btn btn-danger" do %>
+                    <i class="fas fa-trash" style="color: black;"></i>
+                    <% end %>
+                  <% end %>
+                  <span class="comment-date pull-right">
+                  <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                  </span>
                 </td>
                </tr>
             </tbody>

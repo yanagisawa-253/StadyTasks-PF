@@ -15,6 +15,6 @@ class User < ApplicationRecord
   def liked_by?(task_id)
     likes.where(task_id: task_id).exists?
   end
-
+  # エラー箇所
   attachment :profile_image_id
 end
