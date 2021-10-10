@@ -25,7 +25,7 @@
               <%= link_to 'MYページ', user_path(current_user.id), class: 'fas fa-home nav-link text-ligth' %>
             </li>
             <% if unchecked_notifications.any? %>
-                <i class="fa fa-circle notification-circle"></i>
+                <i class="fa fa-circle"　style="color: gold;"></i>
             <% end %>
             <li class="nav-item">
               <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
