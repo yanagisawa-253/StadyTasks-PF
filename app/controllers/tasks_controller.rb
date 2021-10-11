@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:show, :create]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.page(params[:page]).reverse_order
     @like = Like.new
   end
 

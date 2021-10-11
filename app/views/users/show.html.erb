@@ -33,7 +33,7 @@
         <div class="col-sm-12 bg-dark"><i class="fas fa-bell text-dark"></i></div>
         <div class="col-sm-5 mt-3">
           <i class="fas fa-clipboard-list"></i>
-          <strong><%= task.title %></strong>（<%= task.user.name %>）
+          <strong><%= task.title %></strong>  <%= attachment_image_tag task.user, :profile_image, fallback: "shutterstock_1013274682.png", class: "rounded-circle ml-2", size: "40x40" %>（<%= task.user.name %>）
         </div>
         <div class="col-sm-8 mt-3">
           <i class="fas fa-digital-tachograph"></i> <%= task.body %>
