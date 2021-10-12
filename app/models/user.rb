@@ -11,10 +11,9 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
-  # すでにいいねをしているのかどうかを判定
-  def liked_by?(task_id)
-    likes.where(task_id: task_id).exists?
-  end
-  # エラー箇所
-  attachment :profile_image_id
+  attachment :user_image
+
+  validates :name, {presence: true, length: { minimum:2, maximum: 20 }}
+  validates :introduction, { length: { maximum: 100 }}
+
 end

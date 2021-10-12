@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @user = @task.user
     @comment = Comment.new
-    @comments = @task.comments
+    @comments = @task.comments.order(created_at: :desc)
     @like = Like.new
   end
 

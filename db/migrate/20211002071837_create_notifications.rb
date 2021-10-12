@@ -4,9 +4,9 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :task_id
       t.integer :comment_id
-      t.integer :visitor_id, null: false
-      t.integer :visited_id, null: false
-      t.string :action, default: '', null: false
+      t.integer :visitor_id
+      t.integer :visited_id
+      t.string :action
       t.boolean :checked, default: false, null: false
 
       t.timestamps
