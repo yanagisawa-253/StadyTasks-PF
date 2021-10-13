@@ -23,7 +23,7 @@
         </div>
         <div class="d-flex flex-row-reverse">
           <% if @task.user == current_user %>
-            <%= link_to " #{@task.comments.count}", task_path(@task.id), class: "far fa-comments btn btn-sm  mb-3 ml-3" %>
+            <%= link_to " #{@task.comments.count}", task_path(@task.id), class: "fas fa-comments btn btn-sm  mb-3 ml-3" %>
             <%= link_to "", task_path(@task), method: :delete, data: { confirm: '投稿を削除しますか?'}, class: "fas fa-trash-alt btn btn-sm text-secondary mb-3 ml-3" %>
             <%= link_to "", edit_task_path(@task), class: "fas fa-wrench btn btn-sm text-info mb-3 ml-4" %>
             <% end %>
