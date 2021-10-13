@@ -9,9 +9,7 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
 
-  # 一覧画面からでもステータス変更できるように
-  # post '/tasks/:id/done' => 'tasks#done',   as: 'done'
-
+  # 通知
   resources :notifications, only: [:index, :destroy] do
     collection do
         delete 'destroy_all'
