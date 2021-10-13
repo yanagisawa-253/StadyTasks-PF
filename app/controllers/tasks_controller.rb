@@ -26,7 +26,6 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     if @task.save
-      flash[:notice] = 'タスクが投稿されました'
       redirect_to tasks_path
     else
       render 'new'
@@ -45,7 +44,6 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    flash[:success] = "投稿を削除しました"
     redirect_to tasks_path
   end
 
