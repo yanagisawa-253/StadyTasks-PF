@@ -24,6 +24,15 @@
 いいね機能やコメントで交流ができる
 
 ---
+登録ユーザー1
+ログインメール [ gest@gest ]
+ログインパスワード [ 000000 ] 
+
+登録ユーザー2
+ログインメール [ gest@gest ]
+ログインパスワード [ 000000 ] 
+
+---
 ## 設計書
 テーブル設計書
 https://docs.google.com/spreadsheets/d/1Eokrvj-GIqbof6_LTjqPrjd12RB2pI-kqwr4hC401Ko/edit?usp=sharing
