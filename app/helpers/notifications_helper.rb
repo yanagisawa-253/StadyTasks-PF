@@ -14,12 +14,12 @@ module NotificationsHelper
         tag.a(@visitor.name, href:user_path(@visitor), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:task_path(notification.task_id), style:"font-weight: bold;")+"にコメントしました"
     end
   end
-  
+
   # 未確認の通知を示す
   def unchecked_notifications
     @notifications = current_user.passive_notifications.where(checked: false)
   end
-  
+
 end
 
 
