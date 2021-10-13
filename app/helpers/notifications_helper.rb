@@ -1,5 +1,5 @@
 module NotificationsHelper
-  # 通知内容によって、表示内容を分岐
+  # 通知内容によって、表示内容を分岐する
   def notification_form(notification)
     @visitor = notification.visitor
     @comment = nil
