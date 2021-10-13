@@ -1,0 +1,55 @@
+<div class="container task-post">
+        <% if @task.errors.any? %>
+          <div id="error_explanation mt-3 mx-auto">
+            <h2>コメントを入力してください</h2>
+          </div>
+        <% end %>
+  <div class="row mt-2">
+    <span class="fa-stack fa-4x mt-5">
+      <i class="fas fa-circle fa-stack-2x text-dark"></i>
+      <i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
+    </span>
+
+    <div class="col-sm-8 ml-3 mt-5">
+      <div class=" border border-secondary shadow rounded mt-5">
+        <div class="col-sm-12 bg-dark"><i class="fas fa-bell text-dark"></i></div>
+        <div class="container">
+          <div class="col-sm-5 mt-3">
+            <strong><%= @task.title %></strong> [ <%= @task.user.name %> ]
+          </div>
+          <div class="col-sm-10 mt-3">
+            : <%= @task.body %>
+          </div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <% if @task.user == current_user %>
+            <%= link_to " #{@task.comments.count}", task_path(@task.id), class: "far fa-comments btn btn-sm  mb-3 ml-3" %>
+            <%= link_to "", task_path(@task), method: :delete, data: { confirm: '投稿を削除しますか?'}, class: "fas fa-trash-alt btn btn-sm text-secondary mb-3 ml-3" %>
+            <%= link_to "", edit_task_path(@task), class: "fas fa-wrench btn btn-sm text-info mb-3 ml-4" %>
+            <% end %>
+            <% if @task.like_by?(current_user) %>
+              <%= link_to '', destroy_like_path(@task), method: :delet, class:  "fas fa-heartt text-danger btn-sm mb-3 ml-3" %>
+            <% else %>
+              <%= link_to '', create_like_path(@task), method: :post, class: "far fa-heart btn-sm mb-3 ml-3" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-10 border-bottom mx-auto mr-2">
+      <ul class="list-unstyled pt-3 mt-5 pl-5">
+        <li id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="col-sm-10 mx-auto mb-5">
+        <div class="comment-create pl-5 ml-5">
+          <h4 class="pb-3 mt-3">コメントを投稿する</h4>
+          <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
+        </div>
+    </div>
+
+</div>

@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+
+ .user-container {
+  height: 500px;
+ }
+
+ footer{
+   width: 100%;
+   position: absolute;
+ }

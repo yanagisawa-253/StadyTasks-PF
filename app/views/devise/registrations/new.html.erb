@@ -1,0 +1,26 @@
+<div class="user-container mt-5">
+  <div class="row">
+    <div class="signin col-sm-10 mx-auto">
+      <h2 class="h4 mb-3 fw-normal text-center">新規登録 <i class="fas fa-user-plus"></i></h2>
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field text-center mb-2">
+        <%= f.text_field :name, autofocus: true, placeholder: "名前" %>
+        </div>
+        <div class="field text-center mb-2">
+          <%= f.email_field :email, placeholder: "Eメール" %>
+        </div>
+        <div class="field text-center mb-2">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "６文字以上のパスワード" %>
+        </div>
+        <div class="actions text-center">
+          <%= f.submit "新規登録", class: "btn btn-outline-secondary mt-3 mb-2 pr-5 pl-5" %>
+        </div>
+      <% end %>
+      <div class="form text-center mt-3">
+        <%= render "devise/shared/links" %>
+      </div>
+      <p class="text-secondary text-center mt-5">Studytasks</p>
+    </div>
+  </div>
+</div>

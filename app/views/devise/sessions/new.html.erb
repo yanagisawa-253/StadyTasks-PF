@@ -1,0 +1,22 @@
+<div class="user-container mt-5">
+  <div class="row">
+    <div class="signin col-sm-6 mx-auto">
+      <h2 class="h4 mb-3 fw-normal text-center">ログイン <i class="fas fa-sign-in-alt"></i></h2>
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <div class="field text-center mb-2">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Eメール", :size => "20" %>
+        </div>
+        <div class="field text-center mb-2">
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード" %>
+        </div>
+        <div class="actions text-center">
+          <%= f.submit "ログイン", class: "btn btn-secondary mt-3 mb-2 pr-5 pl-5" %>
+        </div>
+      <% end %>
+      <div class="form text-center mt-3">
+        <%= render "devise/shared/links" %>
+      </div>
+      <p class="text-secondary mt-5 text-center">Studytasks</p>
+    </div>
+  </div>
+</div>
