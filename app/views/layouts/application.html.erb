@@ -26,9 +26,11 @@
             </li>
             <li class="nav-item">
               <% if unchecked_notifications.any? %>
-              <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
+                <i class="fa fa-circle n-circle fa-stack-1x"></i>
+                <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
+              <% else %>
+                <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
               <% end %>
-              <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
             </li>
             <li class="nav-item">
               <%= link_to '投稿', new_task_path, class: 'far fa-edit nav-link text-ligth' %>
