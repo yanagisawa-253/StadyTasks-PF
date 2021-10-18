@@ -4,13 +4,11 @@
             <h2>コメントを入力してください</h2>
           </div>
         <% end %>
-  <div class="row mt-2">
-    <span class="fa-stack fa-4x mt-5">
-      <i class="fas fa-circle fa-stack-2x text-dark"></i>
-      <i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
-    </span>
-
-    <div class="col-sm-8 ml-3 mt-5">
+  <div class="row">
+    <div class="task-user-image col-sm-2 text-center mt-5">
+      <%= attachment_image_tag @task.user, :user_image, fallback: "shutterstock_1013274682.png", class: "rounded-circle", size: "150x150" %>
+    </div>
+    <div class="task-post col-sm-8 mt-5 mx-auto">
       <div class=" border border-secondary shadow rounded mt-5">
         <div class="col-sm-12 bg-dark"><i class="fas fa-bell text-dark"></i></div>
         <div class="container">
@@ -30,7 +28,7 @@
             <% if @task.like_by?(current_user) %>
               <%= link_to '', destroy_like_path(@task), method: :delet, class:  "fas fa-heartt text-danger btn-sm mb-3 ml-3" %>
             <% else %>
-              <%= link_to '', create_like_path(@task), method: :post, class: "far fa-heart btn-sm mb-3 ml-3" %>
+              <%= link_to '', create_like_path(@task), method: :post, class: "far fa-heart text-danger btn-sm mb-3 ml-3" %>
             <% end %>
         </div>
       </div>

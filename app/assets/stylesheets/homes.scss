@@ -1,3 +1,13 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+   background-image: image-url("shutterstock_1009710289.png");
+   background-size: cover;
+}
+
+.about-image {
+  background-image: image-url("shutterstock_1675442791.png");
+  background-size: cover;
+}

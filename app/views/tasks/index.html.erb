@@ -1,15 +1,10 @@
-<div class="container task-post">
+<div class="task-container">
   <div class="row">
-    <span class="fa-stack fa-4x mt-5 mr-3">
-      <i class="fas fa-circle fa-stack-2x text-dark"></i>
-      <i class="fas fa-clipboard-list fa-stack-1x fa-inverse"></i>
-    </span>
-
-    <div class="col-sm-8 mt-5 ml-5 mb-5">
+    <div class="task-box col-sm-6 mt-5 mb-5 mx-auto">
       <% @tasks.each do |task| %>
       <div class=" border border-secondary shadow rounded mt-5">
         <div class="col-sm-12 bg-dark"><i class="fas fa-bell text-dark"></i></div>
-        <div class="col-sm-5 mt-3">
+        <div class="col-sm-10 mt-3">
           <i class="fas fa-clipboard-list"></i>
           <strong><%= task.title %></strong>  <%= attachment_image_tag task.user, :user_image, fallback: "shutterstock_1013274682.png", class: "rounded-circle ml-2", size: "40x40" %>（<%= task.user.name %>）
         </div>
