@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item">
               <% if unchecked_notifications.any? %>
-                <%= link_to '通知があります', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
+                <%= link_to '新着の通知です！', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
               <% else %>
                 <%= link_to '通知', notifications_path, class: 'far fa-bell nav-link text-ligth' %>
               <% end %>
