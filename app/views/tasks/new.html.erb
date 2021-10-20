@@ -1,10 +1,7 @@
 <div class="container mb-5">
   <div class="row">
-    <span class="fa-stack fa-4x mt-5">
-      <i class="fas fa-circle fa-stack-2x text-dark"></i>
-      <i class="far fa-copy fa-stack-1x fa-inverse"></i>
-    </span>
-    <div class="col-sm-8 border border-secondary rounded mx-auto mt-5 mb-5">
+    <div class="col-sm-12 mt-5"><h4><i class="far fa-edit"></i>タスクを投稿する</h4></div>
+    <div class="col-sm-8 border border-secondary rounded mx-auto mt-3 mb-5 ml-2 mr-2">
       <% if @task.errors.any? %>
         <div id="error_explanation mt-3 mx-auto">
           <h4><%= @task.errors.count %>件の空欄があります。</h4>
@@ -27,7 +24,7 @@
         <div class="row pb-2">
           <%= f.label "詳細を入力してください:" %>
         </div>
-        <%= f.text_field :body, placeholder: "教材の◯◯まで行う", :size => "45" %>
+        <%= f.text_field :body, placeholder: "教材の◯◯まで行う", :size => "43" %>
         <small id="passwordHelpBlock" class="form-text text-muted pt-1">詳細については５０文字以内で入力しましょう</small>
       </div>
       <div class="form-group text-center">

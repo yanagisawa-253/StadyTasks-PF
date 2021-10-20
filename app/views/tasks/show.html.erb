@@ -9,7 +9,7 @@
       <%= attachment_image_tag @task.user, :user_image, fallback: "shutterstock_1013274682.png", class: "rounded-circle", size: "150x150" %>
     </div>
     <div class="task-post col-sm-8 mt-5 mx-auto">
-      <div class=" border border-secondary shadow rounded mt-5">
+      <div class=" border border-secondary shadow rounded">
         <div class="col-sm-12 bg-dark"><i class="fas fa-bell text-dark"></i></div>
         <div class="container">
           <div class="col-sm-5 mt-3">
@@ -35,7 +35,7 @@
     </div>
 
     <div class="col-sm-10 border-bottom mx-auto mr-2">
-      <ul class="list-unstyled pt-3 mt-5 pl-5">
+      <ul class="list-unstyled pt-3 mt-5">
         <li id="comments_area">
           <%= render partial: 'comments/index', locals: { comments: @comments } %>
         </li>
@@ -44,7 +44,7 @@
   </div>
 
     <div class="col-sm-10 mx-auto mb-5">
-        <div class="comment-create pl-5 ml-5">
+        <div class="comment-create">
           <h4 class="pb-3 mt-3">コメントを投稿する</h4>
           <%= render partial: 'comments/form', locals: { comment: @comment, task: @task } %>
         </div>

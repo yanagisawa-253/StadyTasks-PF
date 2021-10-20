@@ -1,9 +1,9 @@
   <div class="row">
     <div class="comment-text col-sm-10">
       <%= form_with(model: [task, comment], url: task_comments_path(@task)) do |f| %>
-        <%= f.text_field :comment, :size => "70", class: "input-mysize", placeholder: "コメントを入力してください" %>
+        <%= f.text_field :comment, :size => "43", class: "input-mysize", placeholder: "コメントを入力してください" %>
         <div class="mx-auto col-sm-4">
-        <%= f.submit "送信", class: "btn btn-primary comment-submit float-right　mx-auto mt-3 btn-block" %>
+        <%= f.submit "送信", class: "btn btn-primary comment-submit float-right mx-auto mt-3 btn-block" %>
         </div>
       <% end %>
     </div>
