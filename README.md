@@ -29,8 +29,8 @@
 ログインパスワード [ 000000 ] 
 
 登録ユーザー2
-ログインメール [ gest@gest ]
-ログインパスワード [ 000000 ] 
+ログインメール [ gest@gest1 ]
+ログインパスワード [ 111111 ] 
 
 ---
 ## 設計書
@@ -54,8 +54,6 @@ https://docs.google.com/spreadsheets/d/1KRxGx9Qf1JtEawmLP0RRNxn1c3ahGdPU-RVSlJJE
 - IDE：Cloud9
 ---
 ## 使用素材
-フォント素材
-- Font Free https://fontfree.me/
 
 アイコン素材
 - ICOOON MONO https://icooon-mono.com/

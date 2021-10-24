@@ -8,7 +8,7 @@ class Task < ApplicationRecord
   def like_by?(user)
     likes.where(user_id: user.id).exists?
   end
-  
+
   # いいね機能通知レコード
   def create_notification_like!(current_user)
     # すでに「いいね」されているか検索
@@ -27,21 +27,6 @@ class Task < ApplicationRecord
       notification.save if notification.valid?
     end
   end
-
-  # def create_notification_by(current_user)
-  #   notification = current_user.active_notifications.new(
-  #     task_id: id,
-  #     comment_id: comment_id,
-  #     visited_id: visited_id,
-  #     visited_id: user_id,
-  #     action: 'comment'
-  #   )
-  #   # 自分の投稿に対するコメントは通知済みとする
-  #   if notification.visitor_id == notification.visited_id
-  #     notification.checked = true
-  #   end
-  #   notification.save if notification.valid?
-  # end
 
   # コメント機能通知コード
   def create_notification_comment!(current_user, comment_id)
@@ -69,6 +54,6 @@ class Task < ApplicationRecord
     notification.save if notification.valid?
   end
 
-  validates :title, :presence => {:message => 'タイトルを入力してください'}
-  validates :body, :presence => {:message => '本文を入力してください'}
+  validates :title, :presence => { :message => 'タイトルを入力してください' }
+  validates :body, :presence => { :message => '本文を入力してください' }
 end

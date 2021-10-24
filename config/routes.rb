@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # 通知
   resources :notifications, only: [:index, :destroy] do
     collection do
-        delete 'destroy_all'
+      delete 'destroy_all'
     end
   end
   # お問合せ
