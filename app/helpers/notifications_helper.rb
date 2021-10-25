@@ -1,17 +1,20 @@
 module NotificationsHelper
-  # 通知内容によって、表示内容を分岐する
+  #
   def notification_form(notification)
+    #通知を送ってきたユーザーを取得
     @visitor = notification.visitor
+    #コメントの内容を通知に表示する
     @comment = nil
-    your_task = link_to 'あなたの投稿', task_path(notification)
-    @visiter_comment = notification.comment
-    # アクションごとに分岐
+    @visitor_comment = notification.comment
+    # notification.actionがfollowかlikeかcommentかで処理を変える
     case notification.action
-      when "like" then
-        tag.a(notification.visitor.name, href:user_path(@visitor), style:"font-weight: bold; ") + "が" + tag.a('あなたの投稿', href:task_path(notification.task_id), style:"font-weight: bold;") + "にいいねしました"
-      when "comment" then
-        @comment = Comment.find_by(id: @visiter_comment)&.content
-        tag.a(@visitor.name, href:user_path(@visitor), style:"font-weight: bold; ") + "が" + tag.a('あなたの投稿', href:task_path(notification.task_id), style:"font-weight: bold;") + "にコメントしました"
+    when 'like'
+      tag.a(notification.visitor.name, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: task_path(notification.task_id)) + 'にいいねしました'
+    when 'comment' then
+      #コメントの内容と投稿のタイトルを取得
+      @comment = Comment.find_by(id: @visitor_comment)
+      @comment_comment = @comment
+      tag.a(@visitor.name, href: user_path(@visitor)) + 'が' + tag.a('あなたの投稿', href: task_path(notification.task_id)) + 'にコメントしました'
     end
   end
   # 未確認の通知を示す
