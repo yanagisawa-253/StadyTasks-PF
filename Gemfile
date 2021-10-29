@@ -90,3 +90,6 @@ group :test do
   gem "factory_bot_rails"
   gem 'faker'
 end
+
+gem 'rails-i18n', '~> 5.1'
+
