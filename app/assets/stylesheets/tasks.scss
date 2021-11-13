@@ -5,3 +5,13 @@
 .comment-box {
   display: flex;
 }
+// hover の使い方（マウスを乗せると動く！）
+.task-box {
+  width: 550px;
+  height: 200px;
+}
+
+.task-box:hover {
+  width: 570px;
+  height: 220px;
+}
