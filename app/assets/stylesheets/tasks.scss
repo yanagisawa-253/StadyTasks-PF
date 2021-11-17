@@ -9,9 +9,29 @@
 .task-box {
   width: 550px;
   height: 200px;
+  background-color: #fff;
 }
 
 .task-box:hover {
   width: 570px;
   height: 220px;
+}
+
+.task-container {
+  width: 100%;
+  background:linear-gradient(45deg, #87ceeb,#e0ffff,#ffffff);/*グラデーションを定義*/
+  background-size: 200% 200%;/*サイズを大きくひきのばす*/
+  animation: bggradient 20s ease infinite;
+}
+
+@keyframes bggradient{
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

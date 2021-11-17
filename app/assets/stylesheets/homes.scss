@@ -7,6 +7,10 @@ header {
    background-size: cover;
 }
 
+body {
+  background-color: #FFF;
+}
+
 span {
   color: transparent;
   animation: blur 5s ease-out infinite;
@@ -64,3 +68,9 @@ span:nth-child(10) {
   95%   {text-shadow:  0 0 80px #333333;}
   100%  {text-shadow:  0 0 90px #333333; opacity:0;}
 }
+
+.about-box {
+  background-color: #f5f5f5;
+}
+
+

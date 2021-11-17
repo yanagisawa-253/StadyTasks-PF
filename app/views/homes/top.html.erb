@@ -18,8 +18,6 @@
           <%= link_to " 初めてみる", new_user_registration_path, class: "far fa-arrow-alt-circle-right btn btn-primary mt-4 mb-5" %>
         </div>
       </header>
-　　　<!--idを指定し移動-->
-      <section class="page-section mt-3 mb-5" id="welcome">
         <div class="container pb-5 pb-5">
           <div class="text-center mb-5">
             <h1 class="section-heading text-uppercase">StudyTasksへようこそ</h1>
@@ -27,36 +25,33 @@
           </div>
           <div class="row text-center">
             <div class="col-md-4">
-              <span class="fa-stack fa-4x">
+              <div class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-dark"></i>
                 <i class="fas fa-clipboard-list fa-stack-1x fa-inverse"></i>
-              </span>
+              </div>
               <h4 class="my-3">タスク管理</h4>
               <p class="text-muted">今日何を目標にするのか明確にし完了したか、未完了なのかを確認できます。</p>
             </div>
             <div class="col-md-4">
-              <span class="fa-stack fa-4x">
+              <div class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-dark"></i>
                 <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
-              </span>
+              </div>
               <h4 class="my-3">コメント機能</h4>
               <p class="text-muted">ユーザーが立てたタスクに対してコメントを残すことができます。</p>
             </div>
             <div class="col-md-4">
-              <span class="fa-stack fa-4x">
+              <div class="fa-stack fa-4x">
                   <i class="fas fa-circle fa-stack-2x text-dark"></i>
                   <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
-              </span>
+              </div>
               <h4 class="my-3">いいね機能</h4>
               <p class="text-muted">ユーザーが立てたタスクに対していいねを残すことができます。積極的にいいねしてみよう。</p>
             </div>
           </div>
         </div>
-      </section>
 
-
-      <section class="page-section" id="about">
-        <div class="container border-top border-secondary pb-5 pb-5">
+        <div class="about-box pt-5 pb-5">
           <div class="text-center mb-5">
             <h1 class="section-heading text-uppercase mt-4">
               <span>A</span>
@@ -71,7 +66,7 @@
           </div>
 
           <div class="about-container">
-            <div class="about-box col-sm-8">
+            <div class="about-box col-sm-8 ml-3 mr-3 text-left">
               <h3 class="mb-4">ここでは何ができるの...?</h3>
               <p class="about-text pb-2"><i class="fas fa-check-square"></i>  一日の目標設定を行い、完了できたかステータスが更新できる</p>
               <p class="about-text pb-2"><i class="fas fa-check-square"></i>  ログインユーザーのタスクの閲覧ができ、コメントやいいねを残すことができ交流ができる</p>
@@ -79,23 +74,19 @@
               <p><i class="fas fa-check-square"></i>  投稿する際文字制限はかけていないですが、できるだけタイトル２０文字以内<br>本文５０文字以内に収めましょう。詳細をわかりやすく簡潔にまとめる練習にしてください。</p>
             </div>
           </div>
-          <div class="row">
+        </div>
+        <div class="row">
           <div class="col-sm-12"><%= image_tag asset_path('shutterstock_1675442791.png'), class: "img-fluid" %></div>
           </div>
-          <div class="about-box col-lg-12 mt-5 mb-5">
+          <div class="col-lg-12 pt-5 mb-5 ml-3 mr-3">
             <h4 class="about-text pb-3">皆様が良き活動を行えるように</h4>
             <p>
               ＊心ないコメントや誹謗中傷はお控えください<br>
               皆様が良き活動を行えるようにトップページにお問合せフォームを設置していますので気づいたこと、
               改善してほしいことがありましたら<br>お気軽にお送りください。
             </p>
-          </div>
         </div>
-      </section>
-
-
-      <section class="page-section bg-light pb-5" id="contact">
-        <div class="border-top border-secondary mt-5">
+        <div class="mt-5">
           <div class="text-center mb-5">
             <h2 class="section-heading text-uppercase mt-5">お問合せ</h2>
             <h5 class="section-subheading text-muted">何かありましたら下記よりお気軽にお問い合わせください</h5>
