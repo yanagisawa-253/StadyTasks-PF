@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container user-edit">
   <div class-"row">
-    <div class="col-sm-6 text-center mx-auto mt-5 mb-5">
+    <div class="user-edit-box col-sm-6 text-center mx-auto mt-5 mb-5">
        <%= form_with model:@user, local:true do |f| %>
-      <div class="form-group">
+      <div class="user-image form-group">
         <%= attachment_image_tag @user, :user_image, :fill, 200, 200, fallback: "shutterstock_1013274682.png", class: "rounded-circle" %><br>
               <!--エラー箇所-->
         <%= f.attachment_field :user_image, placeholder: "プロフィール画像", class: "mt-3" %>
