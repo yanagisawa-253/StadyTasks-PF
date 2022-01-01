@@ -93,3 +93,6 @@ end
 
 gem 'rails-i18n', '~> 5.1'
 
+gem 'simple_calendar', '~> 2.0'
+
+
