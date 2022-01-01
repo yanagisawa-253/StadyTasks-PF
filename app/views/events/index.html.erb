@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<h2 class="section-top">メモ</h2>
+	<div class="col-md-3 col-sm-12 col-xs-12">
+   <%= form_for (@event) do |f| %>
+     <div class="field row">
+       <label for="menu">タイトル</label>
+       <p><%= f.text_area :title %></p>
+       <label for="weight">内容</label>
+       <p><%= f.text_area :body %></p>
+       <label for="start_time">開始日</label>
+       <p><%= f.datetime_select :start %></p>
+     </div>
+     <div class="actions row">
+       <%= f.submit class: "btn btn-sm btn-hachiss" %>
+     </div>
+   <% end %>
+ 	</div>
+ 	<div class="col-md-9 col-sm-12 col-xs-12">
+		<%= month_calendar events: @events do |date, events| %>
+		  <%= date.day %>
+		  <% events.each do |event| %>
+		  <% end %>
+		<% end %>
+		<table class="memo table table-bordered">
+			<thead>
+				<tr>
+					<th>タイトル</th>
+					<th>内容</th>
+					<th>開始日</th>
+					<th></th>
+					<th></th>
+				</tr>
+		  </thead>
+			<% @events.each do |event| %>
+				<tbody>
+					<tr>
+						<td><%= event.title %></td>
+						<td><%= event.body %>kg</td>
+						<td><%= customer.start.strftime("%Y-%m-%d %H:%M") %></td>
+						<td><%=link_to "削除", event_path(event) , method: :delete , data: {confirm:"削除しますか"} ,:class=>"btn03"%></td>
+					</tr>
+				</tbody>
+			<% end %>
+  		</table>
+ 	</div>
+</div>

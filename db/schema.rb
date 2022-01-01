@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_110440) do
+ActiveRecord::Schema.define(version: 2022_01_01_112541) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 2021_10_12_110440) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.boolean "disp_flg"
+    t.datetime "start"
+    t.datetime "end"
+    t.string "allday"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
