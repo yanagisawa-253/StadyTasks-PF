@@ -1,21 +1,22 @@
 <div class="container">
   <div class="row">
 	    <div class="col-md-4 mt-5 ml-5">
-        <%= form_for (@event) do |f| %>
+        <%= form_with(model: @event, local: true) do |f| %>
         <div class="field row">
-          <label for="title">タイトル</label>
-          <p><%= f.text_field :title %></p>
+          <%= f.text_field :title, placeholder: "タイトル" %>
         </div>
-        <div class="field row mt-2">
-          <label for="body">内容</label>
-          <p><%= f.text_field :body %></p>
+        <div class="field row mt-3">
+          <%= f.text_field :body, placeholder: "内容" %>
         </div>
-        <div class="field row mt-2">
-          <label for="start">開始日</label>
-          <p><%= f.datetime_select :start %></p>
+        <div class="field row mt-3">
+          <label for="start">開始日　</label>
+          <p><%= f.datetime_select :start_time %></p>
         </div>
         <div class="actions row">
           <%= f.submit class: "btn btn-sm btn-success" %>
+        </div>
+        <div class="text-shadu mt-5">
+        	<p class="text-top">・予定がある日は緑色になります</p>
         </div>
         <% end %>
  	    </div>
@@ -41,7 +42,7 @@
 					    <tr>
 					    	<td><%= event.title %></td>
 					    	<td><%= event.body %>kg</td>
-					    	<td><%= customer.start.strftime("%Y-%m-%d %H:%M") %></td>
+					    	<td><%= event.start_time.strftime("%Y-%m-%d %H:%M") %></td>
 					    	<td><%=link_to "削除", event_path(event) , method: :delete , data: {confirm:"削除しますか"} ,:class=>"btn03"%></td>
 					    </tr>
 				    </tbody>

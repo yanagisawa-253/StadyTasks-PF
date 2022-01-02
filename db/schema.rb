@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_01_112541) do
+ActiveRecord::Schema.define(version: 2022_01_02_031043) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2022_01_01_112541) do
     t.string "title"
     t.string "body"
     t.boolean "disp_flg"
-    t.datetime "start"
+    t.datetime "start_time"
     t.datetime "end"
     t.string "allday"
     t.integer "user_id"
