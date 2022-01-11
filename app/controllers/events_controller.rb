@@ -10,7 +10,7 @@ class EventsController < ApplicationController
    @event = Event.new(event_params)
    @event.save
      redirect_to events_path
-  @events = Event.where(user_id: current_user.id)
+   @events = Event.where(user_id: current_user.id)
  end
 
  def destroy
