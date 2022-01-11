@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
-	    <div class="col-md-4 mt-5 ml-5">
+  	<div class="col-md-4 mt-5 ml-5">
+  	  <div class="title-text">
+  	  	<h4>予定を追加する</h4>
+  	  </div>
+	    <div class="event-form mt-3 ml-3">
         <%= form_with(model: @event, local: true) do |f| %>
         <div class="field row">
           <%= f.text_field :title, placeholder: "タイトル" %>
@@ -20,6 +24,7 @@
         </div>
         <% end %>
  	    </div>
+ 	  </div>
  	    <div class="col-md-7 mt-4">
 		    <%= month_calendar events: @events do |date, events| %>
 		    <%= date.day %>
@@ -28,7 +33,7 @@
 		    <% end %>
 		  </div>
 		  <div class="kalender-index col-12 mt-3 mb-3">
-		    <table class="memo table table-bordered">
+		    <table class="table table-bordered">
 			    <thead>
 				    <tr>
 					    <th>タイトル</th>
