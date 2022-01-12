@@ -26,6 +26,11 @@
 ### 頑張ったこと
 RSpecを道入しました
 
+### アップデート内容
+RSpecをtask.user以外にも実装
+[javascript]top画面の動きのあるタイトル
+simple calendarを用いた予定機能の実装
+
 ---
 登録ユーザー1
 ログインメール [ gest@gest ]
