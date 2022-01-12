@@ -14,7 +14,7 @@
         </div>
         <div class="field row mt-3">
           <label for="start">開始日　</label>
-          <p><%= f.datetime_select :start_time %></p>
+          <p><%= f.datetime_select :end %></p>
         </div>
         <div class="actions row">
           <%= f.submit class: "btn btn-sm btn-success" %>
@@ -26,34 +26,35 @@
         <% end %>
  	    </div>
  	  </div>
- 	    <div class="col-md-7 mt-4">
-		    <%= month_calendar events: @events do |date, events| %>
-		    <%= date.day %>
-		      <% events.each do |event| %>
-		      <% end %>
+ 	  <div class="col-md-7 mt-4">
+		  <%= month_calendar events: @events do |date, events| %>
+		  <%= date.day %>
+		    <% events.each do |event| %>
 		    <% end %>
-		  </div>
-		  <div class="kalender-index col-12 mt-3 mb-5">
-		    <table class="event-table table-borde">
-			    <thead>
-				    <tr>
-					    <th>タイトル</th>
-					    <th>内容</th>
-					    <th>開始日</th>
+		  <% end %>
+		</div>
+		<div class="kalender-index col-12 mt-3 mb-5">
+		  <table class="event-table table-borde">
+		    <thead>
+		      <tr>
+			      <th>タイトル</th>
+			      <th>内容</th>
+			      <th>開始日</th>
+			      <th></th>
+		      </tr>
+		    </thead>
+			  <% @events.each do |event| %>
+				  <tbody>
+				   <tr>
+		        	<td><%= event.title %></td>
+				    	<td><%= event.body %>kg</td>
+				    	<td><%= event.end.strftime("%Y-%m-%d %H:%M") %></td>
+				    	<td><%=link_to "削除", event_path(event) , method: :delete , data: {confirm:"削除しますか"} ,:class=>"btn03"%></td>
 				    </tr>
-		      </thead>
-			    <% @events.each do |event| %>
-				    <tbody>
-					    <tr>
-					    	<td><%= event.title %></td>
-					    	<td><%= event.body %>kg</td>
-					    	<td><%= event.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-					    	<td><%=link_to "削除", event_path(event) , method: :delete , data: {confirm:"削除しますか"} ,:class=>"btn03"%></td>
-					    </tr>
-				    </tbody>
-			    <% end %>
-  		  </table>
- 	    </div>
+			    </tbody>
+		   <% end %>
+      </table>
+ 	  </div>
   </div>
 </div>
 
