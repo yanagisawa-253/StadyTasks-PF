@@ -49,7 +49,7 @@
 		        	<td><%= event.title %></td>
 				    	<td><%= event.body %>kg</td>
 				    	<td><%= event.end.strftime("%Y-%m-%d %H:%M") %></td>
-				    	<td><%=link_to "削除", event_path(event) , method: :delete , data: {confirm:"削除しますか"} ,:class=>"btn03"%></td>
+				    	<td><%=link_to "削除", event_path(event) , method: :delete , data: {confirm:"削除しますか"}, class: "btn btn-outline-danger" %></td>
 				    </tr>
 			    </tbody>
 		   <% end %>
